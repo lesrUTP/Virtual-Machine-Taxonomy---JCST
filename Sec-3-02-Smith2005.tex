@@ -1,14 +1,12 @@
 	\subsection{Virtual machine taxonomy by \textit{Smith and Nair}}
-	
-	\begin{figure}[!hbtp]
+
+	\begin{figure}[H]
 		\centering
 		\includegraphics[width=8cm]{images/Smith2005.pdf}
 		\vspace{-0.2cm}
-		\caption{Virtual machine taxonomy proposed by Smith and Nair in 2005 \footnotemark [4]{}.}
+		\caption{Virtual machine taxonomy proposed by Smith and Nair in 2005 \cite{Smith2005}.}
 		\label{fig:VMTaxonomySmithNair2005}
 	\end{figure}
-	
-	\footnotetext[4]{Based on Figure 5 of \textit{The Architecture of Virtual Machines} by James E. Smith and Ravi Nair, in 2005.}
 	
 	In \textit{Smith} and \textit{Nair}'s study of 2005 \cite {Smith2005}, a taxonomy was presented that its objective was to classify the virtualization technologies into two large groups, such as, \textit{Process VMs} and \textit{System VMs}, see Figure \ref{fig:VMTaxonomySmithNair2005}. 
 	
@@ -24,24 +22,16 @@
     
     %LESR - see above the new paragraph
 
-
 	\subsubsection{Process VMs}
 	
 	The process VMs provide an environment in the ABI interface or at the API level. 
 	It is called a multiprogrammed system when it uses the same ISA; otherwise, they are called dynamic emulators and binary translators. 
-	The subcategories of the process virtual machines are described below:
+	The subcategories of the process virtual machines are described below: 
 	
-%	\begin{itemize}		
-%		\item \textbf{Multiprogrammed systems} reference the operating systems that implement multiprogramming through the management of timeshare access to the underlying hardware resources available. These systems use the same ISA and have the ability to handle multiple user processes "simultaneously." The operating system delivers an individual VM for each user process that runs concurrently. One implementation in this context are the \textit{Same-ISA dynamic binary optimizers} using the same ISA from the host system. Furthermore, these translators can make optimized translations of the code, an example of this technology is the Dynamo project \cite{Bala2011}.
-		
-%		\item \textbf{Dynamic translators} uses process VMs to support compiled binary programs for an ISA different from the underlying hardware. This implies executing an emulation effort performed through interpretation, which can be relatively slow. This situation can be compensated for through the \textit{dynamic binary translation} when a software cache is implemented to deal with the inherent overload of the binary translation. Examples of this implementation are the VMs of \textit{High-level languages} (HLL)  such as JVM \cite{Lindholm1997} or Microsoft .NET CLI Framework \cite{Fisher2006} \cite{Thai2003}.
-%	\end{itemize} 
-
-	\textbf{Multiprogrammed systems} reference the operating systems that implement multiprogramming through the management of timeshare access to the underlying hardware resources available. These systems use the same ISA and have the ability to handle multiple user processes "simultaneously." The operating system delivers an individual VM for each user process that runs concurrently. One implementation in this context are the \textit{Same-ISA dynamic binary optimizers} using the same ISA from the host system. Furthermore, these translators can make optimized translations of the code, an example of this technology is the Dynamo project \cite{Bala2011}.
-		
+	\textbf{Multiprogrammed systems} reference the operating systems that implement multiprogramming through the management of timeshare access to the underlying hardware resources available. These systems use the same ISA and have the ability to handle multiple user processes "simultaneously." The operating system delivers an individual VM for each user process that runs concurrently. One implementation in this context are the \textit{Same-ISA dynamic binary optimizers} using the same ISA from the host system. Furthermore, these translators can make optimized translations of the code, an example of this technology is the Dynamo project \cite{Bala2011}. 
+	
 	\textbf{Dynamic translators} uses process VMs to support compiled binary programs for an ISA different from the underlying hardware. This implies executing an emulation effort performed through interpretation, which can be relatively slow. This situation can be compensated for through the \textit{dynamic binary translation} when a software cache is implemented to deal with the inherent overload of the binary translation. Examples of this implementation are the VMs of \textit{High-level languages} (HLL)  such as JVM \cite{Lindholm1997} or Microsoft .NET CLI Framework \cite{Fisher2006} \cite{Thai2003}.
 
-	
 	\subsubsection{System VMs}
 	
 	These are characterized by hosting one or several complete and independent operating systems, running simultaneously on the same hardware of the host computer, as a result of the intermediation performed by the VMM. The subcategories of the system VMs are described below:

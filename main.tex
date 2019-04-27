@@ -1,5 +1,8 @@
 \documentclass[twoside]{article}
 
+\usepackage{graphicx} %package to manage images
+\graphicspath{ {images/} }
+
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsbsy}
@@ -27,21 +30,24 @@
 \usepackage{graphicx}
 
 
-\usepackage[spanish,english]{babel} 
+%\usepackage[spanish,english]{babel} 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{hyperref}
 \usepackage{cleveref}
 \usepackage{multicol}
-\usepackage{caption}
+\usepackage[hypcap=false]{caption}
 \captionsetup[table]{skip=8pt}
-%\usepackage{array}
-%\usepackage{colortbl}
 \usepackage{ftnxtra} % Permite color los pie de página en el Caption de las figuras.
 \usepackage{url}
 \usepackage{amssymb}
 \usepackage{authblk}
+\usepackage{float}
+\usepackage{capt-of}%%To get the caption
+\usepackage[rightcaption]{sidecap}
+
+
 
 \renewcommand{\arraystretch}{1.2}
 \newcommand\myshade{85}
@@ -56,7 +62,12 @@
 	colorlinks = true,
 }
 
- \DeclareGraphicsExtensions{.png,.pdf,.jpg,.gif}
+\DeclareGraphicsExtensions{.png,.pdf,.jpg,.gif}
+\usepackage{hyphenat}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{pdflscape}
+
 
 
 %\usepackage[noend]{algorithm}
@@ -79,7 +90,8 @@
 \renewcommand\tablename{\bf \footnotesize Table}
 \renewcommand\figurename{\footnotesize Fig.\!\!}
 \captionsetup{labelsep=period}%
-\captionsetup[longtable]{labelsep=period}%
+%\captionsetup[longtable]{labelsep=period}%
+\captionsetup{labelsep=period}%
 \allowdisplaybreaks
 \sloppy
 \renewcommand{\headrulewidth}{0pt}
@@ -116,6 +128,7 @@
 \fancyhead[RO]{\small\thepage}
 \fancyhead[LE]{\small\thepage}
 \fancyhead[RE]{\small\sl J. Comput. Sci. \& Technol.}
+
 \setcounter{page}{1}
 \begin{document}
 \begin{CJK*}{GBK}{song}
@@ -127,53 +140,33 @@ JOURNAL OF COMPUTER SCIENCE AND TECHNOLOGY}
 \vspace*{2mm}
 %\title{Journal of Computer Science and Technology: Instruction for Authors}
 
-\title{Virtual Machine Taxonomy: a survery}
+\title{Virtual Machine Taxonomy}
 
 %\footnotetext{{}\\[-4mm]\indent\quad Regular Paper}
 
 \noindent {\small\bf Abstract} \quad  {\small
 \input{Sec-0-Abstract.tex}
 }
-
 \vspace*{3mm}
-
 \noindent{\small\bf Keywords} \quad {\small 
 Containers, Hypervisor, Taxonomy, Virtualization, Virtual Machine 
 }
-
 \vspace*{4mm}
-
 \end{CJK*}
 \baselineskip=18pt plus.2pt minus.2pt
 \parskip=0pt plus.2pt minus0.2pt
 \begin{multicols}{2}
 
-
 	\input{Sec-1-Introduction.tex}
 	\input{Sec-2-VirtualizationConcepts.tex}
-%	\input{Sec-3-00-ClassificationSchemesForVirtualization.tex}
-%    \input{Sec-4-NeedForANewTaxonomy.tex}
-%    \input{Sec-5-VirtualMachineTaxonomyProposal.tex}
-%    \input{Sec-6-Taxonomy-keyDiagram.tex}
-%    \input{Sec-7-Conclusions.tex}
+	\input{Sec-3-00-ClassificationSchemesForVirtualization.tex}
+    \input{Sec-4-NeedForANewTaxonomy.tex}
+    \input{Sec-5-VirtualMachineTaxonomyProposal.tex}
+    \input{Sec-6-Taxonomy-keyDiagram.tex}
+    \input{Sec-7-Conclusions.tex}
 
-\subsection{References}
-
-%\begin{thebibliography}{99}
-%\footnotesize
-%\itemsep=-3pt plus.2pt minus.2pt
-%\baselineskip=13pt plus.2pt minus.2pt
-
-%\bibitem{1}Sayah J Y, Kime C R. Test scheduling in high performance VLSI system implementations. {\it IEEE Trans. Computers}, 1992, 41(1): 52-67. [\textcolor{blue}{example for journal paper}]
-
-
-%\end{thebibliography}
-
-\
-\bibliographystyle{unsrt}
-\bibliography{bibliography}
-
-
+    \bibliographystyle{unsrt}
+    \bibliography{bibliography}
 
 \label{last-page}
 \end{multicols}
