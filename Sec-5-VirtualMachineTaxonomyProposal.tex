@@ -1,0 +1,117 @@
+	\section {Virtual Machine Taxonomy Proposal} \label{sec:taxonomiaPropuesta}
+	
+	\begin{figure*}[!ht]%[!hbtp]
+		\centering
+		\includegraphics[width=17cm]{images/virtualMachineTaxonomy.pdf}
+		\vspace{-0.2cm}
+		\caption{Virtual Machine Taxonomy\footnotemark[10]{}}
+		\label{fig:TaxonomiaPropuesta}
+	\end{figure*}
+	
+	\footnotetext[10]{This taxonomy shows the outdated names of virtualization technologies that have lost validity. However, these names are still used to help the community to understand the positions within this new taxonomy. It is also important to include virtualization technologies that have gained full recognition in the industry and academia, such as \textit{Docker} and \textit{Singularity} among others.}
+	
+	Starting from the concept of taxonomy as the science of naming things and classifying them into different groups \cite{CambridgeDictionary2018}, \cite{Chi2000}, the taxonomic proposal technologies related to VMs is presented below. As indicated previously and as indicated by \cite{Chiueh2005}, \cite{Hoopes2009}, virtualization can occur either by aggregation (many elements are seen as one) or by a division of resources (one element looks like many). 
+	
+	It is essential to clarify this point, as the taxonomy proposed in this paper focuses on aspects related to virtualization by \textit{resource division}. \textit{Aggregation} will be a future work.
+	
+	Considering the different schemes or classification approaches shown by the taxonomies described in the previous section (which have made it possible to obtain a general view about how the technological ecosystem of virtualization is perceived), the authors propose to continue extending and merging some of these taxonomies to establish a view with greater conceptual amplitude with respect to virtualization technologies. Furthermore, as identified in the previous section, the proposed taxonomy can be used in academic and business settings.
+	
+	%La taxonomía de máquinas virtuales que se propone, está basada en diversos trabajos como el realizado por \textit{Chiueh} en 2005 \cite{Chiueh2005},  \textit{Smith}  y \textit{Nair} en 2005 \cite{Smith2005},  SCOPE Alliance en 2008 \cite{SCOPEAlliance2008} y \textit{Pék} y otros en 2013 \cite{Pek2013}. De manera general, la propuesta integra los enfoques taxonómicos \textit{Nivel de abstracción} y \textit{Tipo de máquina virtual}, el primer enfoque está orientado a la utilización de capas, basado en los niveles de abstracción de la arquitectura clásica de un sistema de cómputo y el segundo enfoque está orientado a los tipos de máquinas virtuales ya sea de sistema o de procesos. Ver figura \ref{fig:TaxonomiaPropuesta}. El enfoque \textit{Dominios de virtualización}, no fue considerado en la presente taxonomía debido a que algunos de los dominios identificados, si bien representan una apuesta interesante en el esfuerzo por organizar a elementos o recursos tecnológicos relacionados con virtualización, éstos se encuentran fuera de la definición de virtualización hecha por  \textit{Goldberg} \cite{Goldberg1973}, siendo esta la línea que se quiere conservar en el presente trabajo. Por lo tanto, en esta propuesta taxonómica, la integración de los enfoques \textit{Nivel de abstracción} y \textit{Tipo de máquina virtual} tiene por objetivo presentar una forma de visualizar las tecnologías de virtualización relacionadas con las máquinas virtuales, de tal manera que siempre esté visible el nivel de abstracción en el que tiene lugar cada tecnología de virtualización, además del tipo de máquina proyectada, ya sea un sistema completo o un ambiente de ejecución para procesos basados en un sistema operativo subyacente. A continuación se describen cada uno de los enfoques que tiene la propuesta taxonómica. 
+	
+	
+	%JNM Say a bit more clearly why you are rejecting Kusnetsky and Kampert?  Mention Pessolani specifically too.. you are keeping that one also yes?
+	
+	%We chose not to include the taxonmies of Kusnetsky and Kampert because they are including virtualization of other kinds of resources like storage and networking. 
+	%Also give the reader a heads up on that earlier in the paper.. when you introduce them 
+	%say they are worth mentioning but beyond your scope in this paper or something like that
+	
+	The proposed virtual machine taxonomy is based on various studies such as that made by \textit{Chiueh} in 2005 \cite{Chiueh2005}, \textit{Smith} and \textit{Nair} in 2005 \cite{Smith2005}, \textit{SCOPE Alliance} in 2008 \cite{SCOPEAlliance2008} and \textit{Pék and others} in 2013 \cite{Pek2013}. In general, the proposal integrates the taxonomic approaches \textit{Level of abstraction} and \textit{Type of virtual machine}. The first approach is oriented towards the use of layers, based on the levels of abstraction of the classical architecture of a computer system. The second approach is oriented towards the types of virtual machines that are either system or process. See Figure \ref{fig:TaxonomiaPropuesta}. The \textit{Virtualization domains} approach was not considered in the present taxonomy.  This because some of the identified domains represent an interesting bet in the effort to organize elements or technological resources related to virtualization, but these are outside of the definition of virtualization made by \textit{Goldberg} \cite{Goldberg1973}, which is the approach followed in this paper. Therefore, in this taxonomic proposal, the integration of the \textit{Abstraction Level} and \textit{Virtual Machine Type} approach aims to present a way of visualizing the virtualization technologies related to VMs. This taxonomy allows the simultaneous display of the type of VM and its respective level of abstraction. The following sections, set out the taxonomy approaches contained in this proposal.
+	
+	\subsection{Taxonomic approach 1: Abstraction level}
+
+	This approach is based on the use of labels to determine layers similar to the levels of abstraction of a computer system, such as: Hardware, HAL, OSL, ABI, API, hypervisor Type-1, hypervisor Type-2, and even when these hypervisors are used in conjunction with hardware that physically attends virtualization processes. In Figure \ref{fig:TaxonomiaPropuesta}, the labels correspond to the levels of abstraction that are located on the left side. They also form the title of the rectangular structures with the horizontal distribution of the taxonomy. These rectangular structures suggest a set as a layer for the technologies contained in them.
+	
+	With the use of these layers, the taxonomy makes it possible to locate virtualization technologies depending on the level at which they take place. Thus, the reader can quickly infer aspects such as the dependence or not of an underlying operating system and also determine the number of intermediaries involved in the virtualization process. This therefore allows us to infer in some occasions, the possible performance of these technologies.
+	
+	With regards to the HAL layer, the presence of the Type-1 hypervisor can be seen. It also makes hardware-assisted virtualization technology visible in architectures such as x86. Both labels show that this type of hypervisor is directly placed over the hardware.  This arrangement is called \textit{bare-metal} and it is identified by the absence of intermediaries between the VMs and the hardware, which suggests a higher performance for the set of technologies located in this layer.
+	
+	The layer corresponding to the operating system shows other technologies that apply virtualization through the presence of independent Type-2 hypervisors, or in conjunction with the technologies that assist virtualization from the hardware. This layer also indicates that virtualization is carried out through ABI using calls to the operating system and using the latter as an intermediary between host systems and hardware. This situation suggests that the virtualization technologies belonging to this layer may present an inherent degradation in performance due to the costs of intermediation between the different environments.
+	
+	In the same layer, its also shows that there are virtualization technologies based on segmenting the operating system in light operational environments, currently known as containers. To a large extent, they can contrast performance degradation because they do not perform virtualization of a complete operating system.
+	
+	The last level of abstraction shows virtualization technologies that use APIs as a base. In the case of high-level languages, these can offer a high level of portability because generally, the APIs are used for multiple hardware and software platforms.
+	
+	\subsection{Taxonomic approach 2: Type of VM}
+	
+	VMs must be considered in the first instance, such as \textit{System VMs} or \textit{ Processes VMs}. In Figure \ref{fig:TaxonomiaPropuesta}, this approach corresponds to the interpretation of \textit{top-down}.
+	
+	The \textit{System VMs} imply that within their virtual environment they contain a complete operating system (guest operating system). This is different to \textit{Process VMs}, which in their virtual environment, do not have a hosted operating system. instead, they have a virtual execution environment for processes that use the operating system \textit{host} as an intermediary between the virtual environment and the real hardware, using either interface at the ISA, ABI or HLL level. A description of each category follows.
+	
+	\subsection{System VMs}
+	
+	The \textit{System VMs} show a division in two categories.  The first category is called \textit{Classic System VMs}, and both host and guest use the same ISA. The second category is called \textit{whole system virtual machines}, and both host and guest use different ISA.
+	
+	\subsubsection{Classic system VMs} This type of virtualization is also known as \textit{Hardware Virtualization}, and in turn includes two categories, the first one is called \textit{Native VMs} and the second one \textit{Hosted VMs}. It is important to note that each of these categories takes place at different levels of abstraction.
+	
+	\textbf{Native VMs}: This category is also known as \textit{Type-1 Hypervisor} and corresponds to the HAL abstraction level. Its characteristic is using a software layer directly on top of the hardware. It also presents a subdivision as shown below:
+		
+	\begin{list}{$\bullet$}{\setlength{\leftmargin}{5pt}}
+
+			\item \textbf {Transparent} refers to VMs that's guest operating system is not aware of their virtualization status and can finally be classified as \textit{hardware-assisted} or \textit{dynamic Binary Translation}.
+			
+			\begin{list}{$\diamond$}{\setlength{\leftmargin}{8pt}}
+
+				\item \textbf{Hardware-Assisted} virtualization involves the use of physical components to facilitate the management of virtual machines. This category includes examples such as KVM, Microsoft Hyper-V \cite{Kappel2009}, Xen, VLX and VMware ESX/ESXi \cite{VMware2018Website}.
+				
+				\item \textbf{Dynamic binary translation} implies that the Type-1 Hypervisor catches and inspects the code of each guest operating system request to convert it into a proper request towards the underlying hardware. For examples VMware ESX/ESXi and XtratuM \cite{XtratuM}.
+				 
+			\end{list}
+			
+			\item \textbf{Paravirtualized} is also known as \textit{operating system-assisted virtualization} \cite{VMware2008}, \cite{VMware2018Website} and refers to efficient communication between the guest operating system and the hypervisor. This implies modifying the guest operating system to be aware of virtualization and to take advantage of that condition. This category includes examples, such as; Xen, VLX, KVM and VMware VMI \cite{VMware2018Website}.
+			
+		\end{list}	
+		
+	\textbf{Hosted VMs} also known as \textit{Type-2 Hypervisor}, corresponds to the ABI abstraction level. The main characteristic of this type of virtualization is using a layer of software on a pre-existing operating system. Furthermore, it also presents a subdivision as shown below:
+		
+	\begin{list}{$\bullet$}{\setlength{\leftmargin}{5pt}}
+		
+			\item \textbf{Transparent} refers to VMs whose guest operating system is not aware of their virtualization status. These virtual machines are classified in \textit{Hardware-assisted} or \textit{Dynamic binary translation}.
+			
+			\begin{list}{$\diamond$}{\setlength{\leftmargin}{8pt}}
+
+				\item \textbf {Hardware-Assisted} involves the use of physical components to facilitate the management of virtual machines. This category includes examples, such as; VMware Workstation, VMware Fusion, Microsoft Virtual PC, Parallel Desktop, and Oracle VirtualBox.
+				
+				\item \textbf{Dynamic binary translation} implies that the Type-2 Hypervisor catches and inspects the code of each of the guest operating system's requests to convert it into a proper request towards the underlying hardware. For example; VMware Workstation, VMware Fusion, Microsoft Virtual PC, Parallel Desktop and Oracle VirtualBox.
+			\end{list}
+			
+			\item \textbf {Paravirtualized} refers to efficient communication between the guest operating system and the Type-2 Hypervisor; which implies modifying the guest operating system to be aware of virtualization and take advantage of that condition. An example of this category is VMware Workstation, with the addition of the corresponding paravirtualization \textit{driver} to the network in the guest operating system \cite {VMware2018Website}.
+			
+		\end{list}	
+
+	\subsubsection{Whole system VMs}
+	This type of virtualization is also known as \textit{Hardware emulation} and takes place at the ISA abstraction level.  This emulation presents an ISA different from the underlying hardware. However, in the proposed taxonomy it is located at the ABI abstraction level, which makes evident the existence of a pre-existing operating system on which emulation can occur.
+	
+	\subsection{Proccess VMs}
+	
+	The \textit{Process VMs}, as well as the \textit{System VMs}, present a division according to the ISA projected in the virtual environment. When the ISA is the same, the category is called \textit{multiprogrammed systems}; otherwise, the category is called \textit{Dynamic translators}. Both categories are initially located at the level of the operating system. This indicates the dependence of a pre-existing operating system with has the purpose of generating the virtual environment for the processes. Each of these categories and their respective derivations is described below.
+	
+	\subsubsection{Multiprogrammed systems}
+	
+	Implement the ability to share the operating system among many processes, generating independent execution spaces for each one. This generates the illusion that for a moment of time, a process is an exclusive executor in the system. This category is then divided into two depending on whether there is an operating system. When the same operating system is projecting, the category is called \textit{Multitasking operating systems}; otherwise, they are called \textit{Operating system translators}.
+	
+	\textbf {Multitasking OS} is dividing in turn into \textit{Operating System virtualization} and \textit{Same-ISA dynamic binary optimizer}, which are described below:
+		
+	\begin{list}{$\bullet$}{\setlength{\leftmargin}{5pt}}
+	
+		\item \textbf{Operating System Virtualization}: Applies at the ABI abstraction level, and uses system calls for interaction with the underlying hardware. It uses the pre-existing operating system, and through isolation mechanisms it allows the generation of independent workspaces for the processes. Currently, this type of virtualization is booming and is often known as \textit {lightweight virtualization}, \textit{container-based virtualization} or simply \textit{containers}. The following examples stand out in this category: FreeBSD Jails \cite {Biederman2006}, Solaris Containers \cite {SolarisZones}, OpenVZ \ cite {OpenVZ}, Linux-VServer \cite {Linux-VServer}, AIX Workload Partitions (WPAR) \ cite {WPAR}, Parallels Virtuozzo Containers \cite {Virtuozzo}, LXC \cite {LXC}, Docker \cite {Docker} and Singularity \cite {Sylabs.io}.
+			
+		\item \textbf{Same-ISA dynamic binary optimizers} are fully implemented translators in software which perform optimized translations of binary code with an equal ISA. Its operation is completely transparent, and even the system's native binaries can be optimized too. An example of this category is the Dynamo project \cite{Bala2011}.
+	\end{list}
+		
+	\textbf{Operating System Translator} allows the execution of applications built for operating systems different from the system \textit{host}. For example, WINE \cite{Wine} and WABI \cite{WABI}.
+		
+	\subsubsection {Dynamic Translators}
+	
+	They rely on a pre-existing operating system and support applications built for an ISA that is different from the system host's hardware. According to the differences between the \textit{host's OS} and \textit{guest's OS}, they are called \textit{ISA \& ABI Translator with the same OS}. FX!32 is an example if the host's OS and guest's OS are the same \cite{Chernoff1998}. In the opposite case, the category is called \textit{ISA \& ABI Translator with a different OS}. For example, JVM and .NET Framework.
+	
+	
