@@ -109,9 +109,9 @@
 	
 	This virtualization technique consists of using the hypervisor as a central element, which takes in two different forms. The first one, is to locate the hypervisor directly onto the hardware. 
 	This technique is also known as virtualization \textit{bare-metal} or \textit{native}, and the hypervisor is considered to be \textit{Type-1} (see Figure \ref{fig:Bare-metalHypervisor}). 
-	The installation of this type of hypervisor does not need the presence of an underlying operating system. The second  form is to install the hypervisor on an existing operating system. 
+	The installation of this type of hypervisor does not need the presence of an underlying operating system (OS). The second  form is to install the hypervisor on an existing OS. 
 	This technique is also known as virtualization \textit{hosted} or \textit{host-based}, and the hypervisor is considered to be \textit{Type-2} (see Figure \ref{fig:host-basedHypervisor}). 
-	The main feature of Hypervisor-based virtualization is to create a fully operational virtual machine. This virtual machine can run independently and possibly on top of a different \textit{guest} operating systems, as long as they are compatible with delivered virtual architecture.
+	The main feature of Hypervisor-based virtualization is to create a fully operational virtual machine. This virtual machine can run independently and possibly on top of a different \textit{guest} OS, as long as they are compatible with delivered virtual architecture.
 
 	\begin{figure}[H]
 		\centering
@@ -133,7 +133,7 @@
 	
 	This virtualization technique is based on a pre-existing operating system and consists of the generation of virtual execution environments for processes. 
 	These execution environments are commonly called \textit{Containers} (see figure \ref{fig:container-baseVirtualization}). This virtualization technique requires fundamental parts of the OS to generate the virtual operating environments for the processes \cite{Kon2017}.
-	Unlike hypervisor-based virtualization, which is required to generate VMs with whole operating systems,\cite{Kon2017}. 
+	Unlike hypervisor-based virtualization, which is required to generate VMs with whole OSs,\cite{Kon2017}. 
 	
 	%This absence of OS supposes a lower computational load necessary to generate the virtual environment and in the same way, assumes that said environment is subject to the type of underlying operating system. 
 	

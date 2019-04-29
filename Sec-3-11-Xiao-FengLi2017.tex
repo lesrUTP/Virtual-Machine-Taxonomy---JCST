@@ -2,7 +2,16 @@
 	
 	In the book called "\textit{Advanced Design and Implementation of Virtual Machines}" by Xiao-Feng in 2016 \cite{Xiao-Feng2016}, there is no graph describing the types of classification of virtual machines, however, the existence of four types of virtual machines like this is indicated:
 	
-	\textbf{Type 1}: The \textbf{ISA Virtual Machine} allows full ISA level emulation or virtualization. The operating system and its applications can run on the top the VM as on a RM (e.g. VirtualBox, QEMU, and XEN).
+	\textbf{Type 1}: The \textbf{Full ISA virtual machine} allows full ISA level emulation or virtualization. The operating system and its applications can run on top the VM as on a real machine. Example VirtualBox, QEMU, and XEN.
+	
+	\textbf{Type 2}: \textbf{ABI virtual machine} allows ABI-level emulation of the processes in the guest OS. There applications can run in conjunction with native ABI applications. Example: Intel's IA-32 Execution Layer on Itanium, Transmeta's Code Morphing for X86 emulation.
+	
+	\textbf{Type 3}: The \textbf{Virtal ISA virtual machine}
+	
+	\textbf{Type 4}: The \textbf{Language virtual machine}
+	
+	
+	
 	
 	Although,  ...
 	
