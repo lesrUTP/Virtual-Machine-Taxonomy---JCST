@@ -1,6 +1,6 @@
 	\section {Need for a new taxonomy}\label{sec:necesidadDeUnaTaxonomia}
 	
-	The set of taxonomies described above have many elements that contribute to the classification of virtualization technologies. However, in each of these classification schemes aspects which need to be improved have been identified. On the other hand, each scheme offers a taxonomic approach, such as \textit{Abstraction level}, \textit{Type of VM} and \textit{Virtualization domains}. Table \ref{cuadro:resumenTrabajos} shows a summary of the classification schemes analyzed in this paper, which are identified by; author, year of publication and taxonomic approach. This table describes taxonomies published between 2005 and 2013, but does not include the period between 2013 and 2018 which needs to be updated.
+	The set of taxonomies described above have many elements that contribute to the classification of virtualization technologies. However, in each of these classification schemes aspects which need to be improved have been identified. On the other hand, each scheme offers a taxonomic approach, such as a) \textit{Abstraction level}, b) \textit{Type of VM} and c) \textit{Virtualization domains}. Table \ref{cuadro:resumenTrabajos} shows a summary of the classification schemes analyzed in this paper, which are identified by; author, year of publication and taxonomic approach. This table describes taxonomies published between 2005 and 2017, but for the years 2018 and 2019 no publications were evidenced in the systematic review conducted out in this study.
 	
 	%JNM - are you planning to add 2013-2018? do you have a list of other taxonomies proposed in that time?  If so I think you have to cover those to have a viable paper. 
 	
@@ -20,17 +20,17 @@
 			\hline
 			Scope Alliance  & 2008          & Type of VM\\ 
 			\hline
-			Kampert         & 2010          & Domains\\ 
+			Kampert         & 2010          & Virtualization Domains\\ 
 			\hline
-			Kusnetzky       & 2011          & Domains\\ 
+			Kusnetzky       & 2011          & Virtualization Domains\\ 
 			\hline
 			Pessolani       & 2012          & Type of VM\\ 
 			\hline
 			P{\'e}k         & 2013          & Type of VM\\ 
 			\hline
-			Ameen           & 2013          & Type of VM and Domains\\ 
+			Ameen           & 2013          & Type of VM and Virtualization Domains\\ 
 			\hline
-			Abdulhamid      & 2014          & Type of VM and Domains\\ 
+			Abdulhamid      & 2014          & Type of VM and Virtualization Domains\\ 
 			\hline
 			Shuja           & 2016          & Type of VM\\ 
 			\hline
@@ -44,12 +44,15 @@
 		
 	\end{table}
 
-	The taxonomic approach \textit{Type of VM} is the most popular taxonomic approach, as demonstrated by the studies of \textit{Smith}, \textit{SCOPE Allinace}, \textit{Pessolani} and \textit{P{\'e}k}. On the other hand, \textit{Kampert} and \textit{Kusnetzky} take a different perspective, that's objective is to consider in a general way, the largest number of technological domains in which it is possible to carry out virtualization processes, hence the name \textit{Virtualization domains}. lastly, \textit{Chiueh} considers the taxonomic approach \textit{Level of abstraction} as fundamental for the categorization of virtualization technologies. When there are differences in approach to these issues, interested communities may feel confused when they are reading different authors. This is why there is a need for a taxonomy that provides a unified, organized and updated view for this topic.
+    %LESR new
+	The taxonomic approach \textit{Type of VM} is the most popular taxonomic approach, as demonstrated by the studies of \textit{Smith and Nair}, \textit{SCOPE Alliance Virtualization Working Group} \cite{SCOPEAlliance2008}, \textit{Pessolani et al.} \cite{Pessolani2012}, \textit{P{\'e}k} \cite{Pek2013}, and \textit{Shuja et al.} \cite{Shuja2016}. On the other hand, \textit{Kampert} \cite{Kampert2010} and \textit{Kusnetzky} \cite{Kusnetzky2011} take a different perspective, that's objective is to consider in a general way, the largest number of technological domains in which it is possible to carry out virtualization processes, hence the name \textit{Virtualization domains}. Some taxonomies can be perceived as dual approach, for example the studies by \textit{Ammen et al.} \cite{Ameen2013} and \textit{Abdulhamid et al.} \cite{Abdulhamid2014} combine \textit{Type of VM} with \textit{Domains}, and the \textit{Bugnion et al.}'s study \cite{Bugnion2017} combine \textit{Type of VM} with \textit{Abstraction level}. Lastly, \textit{Chiueh} \cite{Chiueh2005} and \textit{Xiao-Feng et al.} \cite{Xiao-Feng2016} consider the taxonomic approach \textit{Abstraction level} as fundamental for the categorization of virtualization technologies. When there are differences in approach to these issues, interested communities may feel confused when they are reading different authors. This is why there is a need for a taxonomy that provides a unified, organized and updated view for this topic.
 	
 	%JNM Refuerce esto si puede con más información sobre lo que hace su propuesta además de los objetivos. ¿Qué nuevos elementos se agregan por ejemplo?
+
+	%LESR old
+	%This new taxonomy should combine approaches and add new elements. This new taxonomy should be an instrument to provide support in pedagogical processes and learning in the academic community with interests in virtualization technologies. On the other hand, the new taxonomy should also facilitate the visualization of the technological ecosystem that surrounds this topic. It should help industry in its decision-making processes for the selection of these types of technologies.
 	
-	This new taxonomy should combine approaches and add new elements. This new taxonomy should be an instrument to provide support in pedagogical processes and learning in the academic community with interests in virtualization technologies. On the other hand, the new taxonomy should also facilitate the visualization of the technological ecosystem that surrounds this topic. It should help industry in its decision-making processes for the selection of these types of technologies.
-	
+
 	%JNM Creo que es una contribución reunir todas las taxonomías existentes y compararlas. ¿No tendría que argumentar que una nueva es necesaria, solo que está ubicando las existentes en un contexto para poder compararlas?
 	
 	%JNM Eso podría ser un argumento más fácil. ¿No es que ha habido muy pocas taxonías, pero que ha habido demasiadas y que está haciendo el trabajo de compararlas y ponerlas en contexto entre sí?
@@ -61,3 +64,12 @@
 	% JNM tambine estan contribuyendo una visualización que los pone en contexto y un diagrama de flujo basado en esto para ayudar en la selección de tecnologías de virtualización apropiadas en un espacio confuso.
 	
 
+    %LESR I tried to give answer to all questions wrote above with the follow 
+    
+    Due to the above, the following three contributions were made in this work:
+
+    1) A study that corresponds to the review of the literature that included the identification, analysis, characterization and comparison of twelve classification schemes on virtual machines and/or virtualization technologies. See section \ref{sec:esquemasDeClasificacion}. The set of studies considered is summarized in table \ref{cuadro:resumenTrabajos}. 
+
+    2) Construction of a new Virtual Machine Taxonomy proposal, in the process of which some of the existing studies were identified, expanded and combined, which allows offering in a single image the visualization of multiple concepts related to the types of virtual machines and the respective level of abstraction where they are performed in relation to the classical architecture of a computer system. See Figure \ref{fig:TaxonomiaPropuesta}.  The proposed taxonomy includes examples of ancient virtualization technologies, in order to provide a reference factor to those who have some knowledge about them. It also includes examples of new virtualization technologies that have gained wide recognition in industry and academia, such as those related to containers. In addition, the taxonomy is also intended to be an instrument to support the pedagogical processes of teaching and learning in the academic community with interests in virtualization technologies. 
+
+    3) Elaboration of a taxonomic-key diagram whose purpose is to facilitate the visualization of the technological ecosystem that surrounds this topic and, consequently, to help the academic and industrial community in the decision making processes for the selection of this type of technologies. See Figure \ref{fig:taxonomic-keyDiagram}.
