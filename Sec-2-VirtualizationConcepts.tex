@@ -6,7 +6,7 @@
 	\subsection{Virtualization}
 	
 	%Virtualization is the combination of different technologies, which offer advantages to organizations. 
-	Virtualization is a combination of technologies that can help with the management of large volumes of data, with rapid scalability of infrastructure and with effectively utilizing a shared set of massive computing capabilities. According to \textit{Kusnetzky} \cite{Kusnetzky2011}, virtualization makes it possible to make an abstraction of applications and underlying hardware components in a logical or virtual view of these resources \cite{AbdElRahem2016}. This virtual view can sometimes be noticeably different from the physical view of computing resources, such as processing power, memory, storage capacity or even network bandwidth \cite{Stallings2015}. In addition to the above, \textit{Silberschatz} \cite{Silberschatz2014} notes that virtualization is technology that allows operating systems to run as applications within other operating systems.
+	Virtualization is a combination of technologies that can help with the management of large volumes of data, with rapid scalability of infrastructure and with effectively utilizing a shared set of massive computing capabilities. According to \textit{Kusnetzky} \cite{Kusnetzky2011}, virtualization makes it possible to make an abstraction of applications and underlying hardware components in a logical or virtual view of these resources \cite{AbdElRahem2016}. This virtual view can sometimes be noticeably different from the physical view of computing resources int terms of processing power, memory, storage capacity or even network bandwidth \cite{Stallings2015}. In addition to the above, \textit{Silberschatz} \cite{Silberschatz2014} notes that virtualization is a technology that allows operating systems to run as applications within other operating systems.
 	
 	%La virtualización también incluye el término \textit{emulación}, el cual es ampliamente conocido y hace referencia al hecho de tener diferencias entre la arquitectura base y la proyectada en el proceso de virtualización.
 	
@@ -16,20 +16,21 @@
 	%Virtualization also includes the term \textit{emulation}, which is widely known and refers to the fact that there are differences between the base architecture and the architecture projected in the virtualization process.
 	
 	%LESR - new
-	Virtualization also includes the term \textit{emulation}, which is widely known and refers to the fact that there are differences between the base architecture and the architecture projected in the virtualization process. That is, a virtual machine could have the same host architecture, a variant of the same architecture with strategic modifications to make virtualization easier or a completely different architecture.
+	Virtualization can includes \textit{emulation}, which refers to the fact that there are differences between the base physical architecture and the logical architecture used by virtualized processes. Thus,a virtual machine could use the same host architecture or a completed different emulated architecture or in a hybrid, it could use a variant of underlying physical architecture with strategic modifications to make virtualization easier (\textit{paravirtualization}).
 	
 	%Entre los objetivos de la virtualización se tiene: aumento de los niveles de rendimiento computacional, favorecer la escalabilidad y disponibilidad de sus soluciones tecnológicas de manera eficiente y eficaz, además de propender por unificar y usar de forma fácil las estructuras de administración y seguridad de la infraestructura computacional existente \cite{Kusnetzky2011}, \cite{Hui2014}. 
 	
 	%JNM not sure what you mean hear by "increasing the levels of computational performance"? do you mean increasing performance? or do you mean having different levels of abstraction?
 	
-	%LESR - new
-	Some virtualization goals include increasing the levels of use of computational resources, favoring scalability and availability unifying and helping to use the administration and security structures of the existing computational infrastructure \cite{Kusnetzky2011}, \cite{Hui2014}.
+	
 	
 	%JNM this paragraph seems quite clear to me  - good... the one above referencing Kusnetzky2011 and Hui2014 seemed less clear
 	
 	%LESR - new
-	Through virtualization, it is possible to create a logical view that combines computational resources that can represent one or more operating environments. This means, for example, that many physical computers look like a single great resource (aggregation of resources) or, on the contrary, that a single machine is considered as several instances of itself (division of resources) \cite{Silberschatz2014}. Virtualization can take place using methodologies, such as partition or aggregation of hardware and software, partial or complete machine simulation, emulation and time sharing among others \cite{Chiueh2005, Hoopes2009}. The separation of resources is one of the most common ways of using virtualization. In this case, it is possible to add the virtualization layer on top of real machine. This virtualization layer allows multiple virtualized environments to run simultaneously on the same real computer, either with the same architecture as the underlying system, with a variant of the same architecture including strategic modifications to facilitate virtualization, or with a completely different architecture for each particular need.
+	Through virtualization, it is possible to create a logical view that combines computational resources that can represent one or more operating environments. This means, for example, that many physical computers look like a single great resource (aggregation of resources) or, on the contrary, that a single machine is considered as several instances of itself (division of resources) \cite{Silberschatz2014}. Virtualization can take place using methodologies, such as partition or aggregation of hardware and software, partial or complete machine simulation, emulation and time sharing among others \cite{Chiueh2005, Hoopes2009}. The separation of resources is one of the most common methods of using virtualization. In this case, it is possible to add the virtualization layers on top of a real physical machine. These virtualization layers allow multiple virtualized environments to run simultaneously on the same physical computer, either with the same architecture as the underlying system, with a variant of the same architecture including strategic modifications to facilitate virtualization, or with a completely different architecture for each particular need.
  
+ %LESR - new
+
 
 	
 	%JNM Figure 1 and 3 were the same in the paper copy I have? Remove one?
@@ -45,7 +46,7 @@
 	
 	%LESR See above (Final part of the paragraph).
 	
-	Unfortunately, the x86 computer architecture, despite being one of the most widely adopted computer architecture in the world can not be virtualized completely\cite{Adams}. In this architecture, when executing instructions in non-privileged mode, some of them can fail silently instead of causing a trap and thus can not provide their respective treatment. 
+	Unfortunately, the x86 computer architecture, despite being one of the most widely adopted computer architecture in the world can not be virtualized completely\cite{Adams}. This has driven in large part the investment in paravirtualized environments.  In the x86 architecture, when executing instructions in non-privileged mode, some of them can fail silently instead of causing a trap and thus can not provide some needed support for true virtualization.  
 	This situation can be solved through mechanisms and  virtualization approaches that act on different levels of abstraction. The abstraction levels where the virtualization takes place are the following: instruction set level, hardware abstraction level (HAL), operating system level (OS Level using system call interface), user-level library interface level and the application level \cite{Chiueh2005}. The virtualization concepts are grouped into the categories \textit{elements} and \textit{virtualization techniques}, which are described below.
 	
 	\subsection{Elements of virtualization}
@@ -56,7 +57,7 @@
 	\subsubsection{Real machine}
 	
 	The term \textit{real machine} refers to the physical elements of the technological infrastructure that make up a computer; be it a personal computer, a workstation or a server. 
-	Other references to this term are \textit {hardware}, \textit {physical hardware}, and \textit{bare-metal}. 
+	Other references to this term are \textit {hardware}, \textit {physical hardware}, \textit {physical machine} and \textit{bare-metal}. 
 	In the commercial computer field, it is common to refer to the real machine concept using the word \textit{host} \cite{VMware2008}.
 	
 	\subsubsection{Virtual machine}
@@ -80,8 +81,11 @@
 	
 	\subsubsection{Virtual machine monitor}
 	
-	The term \textit{virtual machine monitor} (VMM), was established by \textit{Popek} and \textit{Goldger} \cite{Popek1974}, in which they have defined the conceptual foundation of VMM as a piece of software that has three essential characteristics: \textbf{Equivalence}: To provide an execution environment for programs. This environment is identical to the original machine. \textbf{Performance}: Programs that run in this environment show, in the worst case, only minor decreases in speed. \textbf{Resource Control}: The VMM is in complete control of the system resources. The definition of a VMM is related to a software layer that provides support infrastructure using the resources of a lower level (usually \textit{hardware}), to create multiple VMs that are independent and isolated from each other \cite{Chiueh2005}, \cite{Cafaro2011}. Similarly, \textit{William Stallings} \cite{Stallings2015} determines that a VMM, is software that acts as an intermediary between the real machine and the VMs. 
-	This software is commonly called \textit{Hypervisor} and it allows many VMs to coexist safely in the same hardware. The number of VMs that exist in a single computer determines the index of consolidation. In the particular case of Figure \ref{fig:VMM}, 9 to 1 is expressed as (9:1). The higher the consolidation index, the better the ROI and the less the TCO of the real machine used. Some of the functions and responsibilities of hypervisors are; emulation, isolation, resource allocation, and encapsulation \cite{Hoopes2009}.
+	The term \textit{virtual machine monitor} (VMM), was established by \textit{Popek} and \textit{Goldberg} \cite{Popek1974}, in which they have defined the conceptual foundation of VMM as a piece of software that has three essential characteristics. 1) \textbf{Equivalence}: To provide an execution environment for programs. This environment is identical to the original machine. Popek and Goldberg were not considering the later concepts of emulation or paravirtualization, although these concepts are applied to VMMs today. 2) \textbf{Performance}: Programs that run in this environment show, in the worst case, only minor decreases in speed. 3) \textbf{Resource Control}: The VMM is in complete control of the system resources. The definition of a VMM is related to a software layer that provides support infrastructure using the resources of a lower level (usually \textit{hardware}) in order to create multiple VMs that are independent and isolated from each other \cite{Chiueh2005}, \cite{Cafaro2011}. Similarly, \textit{William Stallings} \cite{Stallings2015} determines that a VMM, is software that acts as an intermediary between the real machine and the VMs. 
+	  
+	  VMMs are also commonly called a \textit{Hypervisor}. Some of the functions and responsibilities of modern hypervisors are; emulation, isolation, resource allocation, and encapsulation \cite{Hoopes2009}. 
+	  
+	  A VMM allows many VMs to coexist safely in the same hardware. The number of VMs that exist in a single computer determines the index of consolidation. In the particular case of Figure \ref{fig:VMM}, 9 to 1 is expressed as (9:1). The higher the consolidation index, the better the ROI and the less the TCO of the real machine used.
 
 %    \begin{center}
 %		\includegraphics[width=6cm]{images/VMM.pdf}
@@ -107,11 +111,11 @@
 	
 	\subsubsection{Hypervisor-based virtualization technique}
 	
-	This virtualization technique consists of using the hypervisor as a central element, which takes in two different forms. The first one, is to locate the hypervisor directly onto the hardware. 
-	This technique is also known as virtualization \textit{bare-metal} or \textit{native}, and the hypervisor is considered to be \textit{Type-1} (see Figure \ref{fig:Bare-metalHypervisor}). 
-	The installation of this type of hypervisor does not need the presence of an underlying operating system (OS). The second  form is to install the hypervisor on an existing OS. 
-	This technique is also known as virtualization \textit{hosted} or \textit{host-based}, and the hypervisor is considered to be \textit{Type-2} (see Figure \ref{fig:host-basedHypervisor}). 
-	The main feature of Hypervisor-based virtualization is to create a fully operational virtual machine. This virtual machine can run independently and possibly on top of a different \textit{guest} OS, as long as they are compatible with delivered virtual architecture.
+	This virtualization technique consists of using the hypervisor as a central element, which can take on two different forms. The first one, is to locate the hypervisor directly on the hardware. 
+	This technique is also known as  \textit{bare-metal} or \textit{native} virtualization, and the hypervisor is considered to be a \textit{Type-1}, \textit{Type I},  or \textit{Level 1} hypervisor (see Figure \ref{fig:Bare-metalHypervisor}). 
+	The installation of this type of hypervisor does not need the presence of an underlying operating system (OS). The second form is to install the hypervisor on top of an existing OS. 
+	This technique is also known as  \textit{hosted} or \textit{host-based} virtualization, and the hypervisor is considered to be a \textit{Type-2}, \textit{Type II}  or \textit{Level 2} hypervisor (see Figure \ref{fig:host-basedHypervisor}). 
+	The main feature of Hypervisor-based virtualization is to support virtual machines that are not dependent on an underlying operating system. Unlike container-based virtualization described below, the operating system running inside the virtual machines is not constrained by the choice of an underlying OS layer. The VMs can run any guest OS as long as they are compatible with delivered virtual architecture.
 
 	\begin{figure}[H]
 		\centering
@@ -125,15 +129,15 @@
 		\centering
 		\includegraphics[width=6cm]{images/hosted-BasedHypervisor.pdf}
 		\vspace{-0.2cm}
-		\caption{Host-based hypervisor}
+		\caption{Host-based Hypervisor}
 		\label{fig:host-basedHypervisor}
 	\end{figure}
 	
 	\subsubsection {Container-based virtualization technique}
 	
-	This virtualization technique is based on a pre-existing operating system and consists of the generation of virtual execution environments for processes. 
-	These execution environments are commonly called \textit{Containers} (see figure \ref{fig:container-baseVirtualization}). This virtualization technique requires fundamental parts of the OS to generate the virtual operating environments for the processes \cite{Kon2017}.
-	Unlike hypervisor-based virtualization, which is required to generate VMs with whole OSs,\cite{Kon2017}. 
+	This virtualization technique is based on a pre-existing operating system and consists of the generation of virtual execution environments as processes running on top of the pre-existing OS layer. 
+	These execution environments are commonly called \textit{Containers} (see Figure \ref{fig:container-baseVirtualization}). Unlike hypervisor-based virtualization, this virtualization technique requires  the underlying OS to generate the virtual operating environments for these container processes \cite{Kon2017}. The containers appear as separate systems images, but are really processes supported by the underlying OS and as such must run the same guest OS as the underlying system.
+	
 	
 	%This absence of OS supposes a lower computational load necessary to generate the virtual environment and in the same way, assumes that said environment is subject to the type of underlying operating system. 
 	

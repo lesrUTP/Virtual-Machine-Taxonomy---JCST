@@ -8,13 +8,13 @@
 		\label{fig:VMTaxonomySmithNair2005}
 	\end{figure}
 	
-	In \textit{Smith} and \textit{Nair}'s study of 2005 \cite {Smith2005}, a taxonomy was presented that its objective was to classify the virtualization technologies into two large groups, such as, \textit{Process VMs} and \textit{System VMs}, see Figure \ref{fig:VMTaxonomySmithNair2005}. 
+	In 2005, \textit{Smith} and \textit{Nair} presented a taxonomy in which they first classified virtualization technologies into two large groups,  \textit{Process VMs} and \textit{System VMs}  and then into finer groups based on whether the ISA supported in a VM is the same as the underlying hardware\cite {Smith2005}. This classification is illustrated in Figure \ref{fig:VMTaxonomySmithNair2005}. 
 	
 	%LESR - new
-	 In general, it could be pointed out that the first level of division (Process vs. System) is about the level of virtualization but of coarser grain than that shown in the \textit{Chiueh's} study \cite{Chiueh2005}. The second level of decomposition refers to whether the virtual machine either Process or System is different from the underlying physical machine or not. 
+	 We observed that the first level of division (Process vs. System) is similar to Chiueh's level of virtualization but of coarser granularity \cite{Chiueh2005}. 
     
     %JNM 
-    System VMs contain an operating system and Process VMs instead access an underlying OS through an Application Binary Interface (ABI) or at the API level. In turn, each category is divided according to the execution or not of ISA simulations, giving rise to various subcategories which are explained below.
+    System VMs contain an operating system and Process VMs instead access an underlying OS through an Application Binary Interface (ABI) or at the API level. 
 	
     %JNM - you could point out that Process vs System is about the level of virtualization but coarser grain than Chiueh2005 
     
@@ -25,10 +25,10 @@
 	\subsubsection{Process VMs}
 	
 	The process VMs provide an environment in the ABI interface or at the API level. 
-	It is called a multiprogrammed system when it uses the same ISA; otherwise, they are called dynamic emulators and binary translators. 
+	It is called a multiprogrammed system when it uses the same ISA; otherwise, they are called dynamic emulators or binary translators. 
 	The subcategories of the process virtual machines are described below: 
 	
-	\textbf{Multiprogrammed systems} reference the operating systems that implement multiprogramming through the management of timeshare access to the underlying hardware resources available. These systems use the same ISA and have the ability to handle multiple user processes "simultaneously." The operating system delivers an individual VM for each user process that runs concurrently. One implementation in this context are the \textit{Same-ISA dynamic binary optimizers} using the same ISA from the host system. Furthermore, these translators can make optimized translations of the code, an example of this technology is the Dynamo project \cite{Bala2011}. 
+	\textbf{Multiprogrammed systems} reference the operating systems that implement multiprogramming through the management of timeshare access to the available underlying hardware resources. These systems use the same ISA and have the ability to handle multiple user processes "simultaneously." The operating system delivers an individual VM for each user process that runs concurrently. One implementation in this context are the \textit{Same-ISA dynamic binary optimizers} using the same ISA from the host system. Furthermore, these translators can make optimized translations of the code, an example of this technology is the Dynamo project \cite{Bala2011}. 
 	
 	\textbf{Dynamic translators} uses process VMs to support compiled binary programs for an ISA different from the underlying hardware. This implies executing an emulation effort performed through interpretation, which can be relatively slow. This situation can be compensated for through the \textit{dynamic binary translation} when a software cache is implemented to deal with the inherent overload of the binary translation. Examples of this implementation are the VMs of \textit{High-level languages} (HLL)  such as JVM \cite{Lindholm1997} or Microsoft .NET CLI Framework \cite{Fisher2006, Thai2003}.
 
